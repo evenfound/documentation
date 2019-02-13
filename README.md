@@ -93,7 +93,7 @@ The function value is immeasurable and has a physical meaning as a relative shar
 
 In each period of calculating the work of the network the node ranking value depends on several parameters:
 
-*1. The relative node capacity input into the total capacity of the network.
+*1. The relative node capacity input into the total capacity of the network.*
 
 Here it is worth mentioning that most information exchange and data verification algorithms in a distributed network provide for an equal involvement of its active members in this process.   Thus the **_capacity_**  of a specific node, as a full participant, impacts the average time for processing information. Its relative value depends on the total computing capacity of the **_P_**  network, which can be represented as the sum of discrete values of the network node capacity:
 
@@ -105,28 +105,28 @@ At the same time the **_relative node capacity input_** into the total computing
 
 	P_o  =〖P_i (T=〖t_j)〗_ 〗_ /P                                                                         (1.2)
 
-**Note:** *It is evident that an increase in the total capacity of the node network with its constant value at a specific node leads to the reduction of the value of its relative weight in the system, which must be factored in when considering the impact on the resulting indicator.
+**Note:** *It is evident that an increase in the total capacity of the node network with its constant value at a specific node leads to the reduction of the value of its relative weight in the system, which must be factored in when considering the impact on the resulting indicator.*
 
-*2.  Of the relative speed on the network's operation.
+*2.  Of the relative speed on the network's operation.*
 
 The value *V_N* determined by the number of confirmed packets of data transfer over a unit of time in the network in which the node operates will obviously impact on its ranking. Bearing in mind that this method yields a relative value, it would be feasible to normalize this parameter *V_o* either towards the middle of its network value or to the maximum value. This choice can be made by experimental means, by calculating the level of indeterminacy of the value of the node ranking function.
 
 
-*3.  Of the relative input of the node into the information exchange — activity.
+*3.  Of the relative input of the node into the information exchange — activity.*
 
 A relative share of the input of a specific node into information exchange  *K_o* characterizes its activity. It depends on the total value of the volume of information exchange — the number of units of information К, transferred in the distribution network over an interval of time by active network participants calculated statistically, and the volume of the input of the *K_i  i* node into this exchange.
 
 Here it should be noted that a substantial impact on this indicator is made by *1* and *2* above, which allows us to assume its integral nature. In other words, its value in a discrete period of time of a *j* event is the value of the figure's area limited by the function of the change in the total information exchange over a period of time *Δt* depending on the speed of the change of the *i* node input, which is determined by the derivative from the function of the change in relative values *1* and *2*:
 
-![Screenshot](/img/1.png)
+![Screenshot](/img/3.png)
 
-                                  (1.3)
+(1.3)
 
 	K_o=K_i/K ∫_(t_(j-1))^(t_j)  ((V_o (t)+P_o (t))dt)/2                                                 (1.4)
 
 On examining the dependency schedule it can be assumed that the endless increase in node capacity does not entail an endless increase in the *relative input share* and the principle of its distribution, for instance, on a polynomial prognosis, will be of an exponential character, which can be used to offset its impact on distribution, factoring in the weight of the following indicators.
 
-*4.  Setting totals.
+*4.  Setting totals.*
 
 Considering one of the basic requirements of a peer-to-peer network which excludes an increasing domination of its separate members in the operational information exchange, with the aim of preventing its centralization of data this indicator can be used as an **offsetting** influence of technical indicators 1, 2 and 3. Prefacing the description, the approach resides essentially in the fact that the calculation of the node ranking at the moment of time t is made by calculating the average value of the natural logarithm from the relative amount of settings and the logarithmically reverse function from the value of the relative input of the node into the information exchange. In other words, the number of **S** settings over the j period of events is lograrithmically inverse to the relative input into the information exchange.
 
@@ -137,9 +137,9 @@ Thus
 
 Where the settings total of the i node over the period of the j event is the value of the settings total of the i node over the time of the j event.
 
-**Note:** *It will be appropriate to explain that the time of event j is the time interval from the last event in the network in which the latest values required in this method of indicators were obtained.
+**Note:** *It will be appropriate to explain that the time of event j is the time interval from the last event in the network in which the latest values required in this method of indicators were obtained.*
 
-*5. Accuracy of historical information, that is, of 'rumors'
+*5. Accuracy of historical information, that is, of 'rumors'*
 
 In systems with a distributed confirmation of transactions, in order to implement most consensus algorithms information on past events in the network is used.
 
@@ -190,42 +190,39 @@ Bob doesn't have anything in his wallets:
 
 Alice decides to send Bob 80 information units at the address AHGSHFSJHFSJ…… QQQ .. A message in the EVEN basic protocol is a connected hash with an index of three types of transaction: input, output and meta-transactions. For our scenario it is initially essential to prepare an output transaction, which means that we want to send to Bob's address 80 information units:
 
+![Screenshot](/img/6.jpg)
+*Draw up a transaction to Bob's address of 80 information units*
 
- 
-Draw up a transaction to Bob's address of 80 information units
 Next we will need to draw up an input transaction. In this scenario all four addresses will have to be used which contain ( 10 + 5 + 25 + 60 > 80) information units to perform the output value to the sum of 80.
 
+![Screenshot](/img/7.png)
+*Four output transactions which send units to Bob's address*
 
-    
-Four output transactions which send units to Bob's address
 Next we will need to draw up an input transaction. In this scenario all four addresses will have to be used which contain (10 + 5 + 25 + 60 > 80) information units to perform the output value to the sum of 80. An input transaction should contain the transaction signature, which means that it is essential to add an additional meta-transaction to transfer the signature, it must be added:
 
+![Screenshot](/img/8.png)
+*Adding to the meta-transaction message to transfer the signature*
 
-
-
-
-    
-Adding to the meta-transaction message to transfer the signature
 Drawing up the message has not been completed: the packet is unbalanced. Thus four transactions have been formed for 100 information units: 10 + 5 + 25 + 60 = 100 inputs and 80 outputs, with 20 information units remaining that should be returned to the sender's wallet. For this an additional transaction needs to be created. The wallet creates a new address to receive an output transaction for the remainder marked 'unspend':
 
- 
+ ![Screenshot](/img/9.jpg)
 
-After this the balanced packet is received and the conclusion of the message can be begun. For this it is essential to fill out consecutively the transaction indexes, the last index and generate the packet's hash function with the help of the hash function SHA-3. 
+After this the balanced packet is received and the conclusion of the message can be begun. For this it is essential to fill out consecutively the transaction indexes, the last index and generate the packet's **hash function** with the help of the **hash function SHA-3**. 
 
+![Screenshot](/img/10.png)
+*Filling out the indexes*
 
-   
-   
-Filling out the indexes
-After this the balanced packet is received and the conclusion of the message can be started. For this it is essential to fill out consecutively the transaction indexes, the last index and generate the packet's hash function with the help of the hash function SHA-3. 
+After this the balanced packet is received and the conclusion of the message can be started. For this it is essential to fill out consecutively the transaction indexes, the last index and generate the packet's **hash function** with the help of the **hash function SHA-3**.
+
 The hash function uses a sponge algorithm that will consecutively absorb the transactions, checking each element one by one (the order is important) and then will generate the result. In addition, at the stage of receiving the hash the function will check whether the packet hash is safe or not. If it is not, it will change the obsolete tag of the u-head transaction (a transaction with the index 0) and again generate a hash. After the message hash has been received, it is essential to continue filling out the transactions and receive the following set:
 
-   
-   
-Filling out the message hashes
+![Screenshot](/img/11.png)
+*Filling out the message hashes*
+
 Next it is essential to sign the input transactions with the private key of the corresponding address. For this you can receive the address private key from the key generator with the help of A_SECRET_SEED of the wallet. Using the address secret key, it becomes possible to use the signature fragment generator with the private key and the packet hash in order to receive the transaction signature.
 
- 
-Using the key generator to receive the signature fragment generator.
+![Screenshot](/img/12.jpg) 
+*Using the key generator to receive the signature fragment generator.*
   
  
 

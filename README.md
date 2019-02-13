@@ -89,18 +89,21 @@ The node service that performs the network's needs as effectively as it can, and
 
 The algorithm for the ranking calculation has a synthetic character and its main purpose is the dynamic ranking calculation of the node service with a simultaneous compensating this calculation under technical and information indicators.
 
-The function value is immeasurable and has a physical meaning as a relative share of the input of a specific node into the total ranking of the network node. The continuous function calculation for node **_R_** rating value at the moment of time **_t - R(t)_** is challenged by the fact that in the current discrete system its current value does not exist. In other words, we can say that the value of the function is correct at moments that coincide with changes in the system, in the node network, for instance. t_(-n),t_0...t_∞. This modality,  based on an analysis of indicators on which the function value in discrete moments in a selected historical period depends, and the presumption that the total network ranking may depend on market moods, allows for the presumption that a transient *polynomial forecasting* of its value on the basis of statistical network data is possible.
+The function value is immeasurable and has a physical meaning as a relative share of the input of a specific node into the total ranking of the network node. The continuous function calculation for node **_R_** rating value at the moment of time **_t - R(t)_** is challenged by the fact that in the current discrete system its current value does not exist. In other words, we can say that the value of the function is correct at moments that coincide with changes in the system, in the node network, for instance. `t_(-n),t_0...t_∞`. This modality,  based on an analysis of indicators on which the function value in discrete moments in a selected historical period depends, and the presumption that the total network ranking may depend on market moods, allows for the presumption that a transient *polynomial forecasting* of its value on the basis of statistical network data is possible.
 
 In each period of calculating the work of the network the node ranking value depends on several parameters:
 
-1. The relative node capacity input into the total capacity of the network.
+*1. The relative node capacity input into the total capacity of the network.
 
-Here it is worth mentioning that most information exchange and data verification algorithms in a distributed network provide for an equal involvement of its active members in this process.   Thus the capacity  of a specific node, as a full participant, impacts the average time for processing information. Its relative value depends on the total computing capacity of the P  network, which can be represented as the sum of discrete values of the network node capacity:
+Here it is worth mentioning that most information exchange and data verification algorithms in a distributed network provide for an equal involvement of its active members in this process.   Thus the **_capacity_**  of a specific node, as a full participant, impacts the average time for processing information. Its relative value depends on the total computing capacity of the **_P_**  network, which can be represented as the sum of discrete values of the network node capacity:
 
-	P = ∑_(i=0)^M Pi(T=〖tj)〗_                                                                             (1.1)
-Where M  is the number of nodes in the network, Pi the computing power of the i node at discrete moment T -  from the j event.
-At the same time the relative node capacity input into the total computing capacity of the network looks like this:
-P_o  =〖P_i (T=〖t_j)〗_ 〗_ /P                                                             (1.2)
+	`P = ∑_(i=0)^M Pi(T=〖tj)〗_ `                                                                            (1.1)
+
+Where **_M_**  is the number of nodes in the network, *Pi* the computing power of the *i* node at discrete moment *T* -  from the *j* event.
+
+At the same time the **_relative node capacity input_** into the total computing capacity of the network looks like this:
+
+	`P_o  =〖P_i (T=〖t_j)〗_ 〗_ /P   `                                                          (1.2)
 
 Note: It is evident that an increase in the total capacity of the node network with its constant value at a specific node leads to the reduction of the value of its relative weight in the system, which must be factored in when considering the impact on the resulting indicator.
 

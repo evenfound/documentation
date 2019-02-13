@@ -30,16 +30,26 @@ The advantages of this solution:
 
 However, the obvious advantages of this model are per se offset by the following shortcomings:
 DAG shortcomings:
-	Scalability issues (blockchain needs to be synchronised each time when adding a new transaction).
-	With few network participants transactions confirmation can take long, and if there are none they may not be confirmed at all.
+
+- Scalability issues (blockchain needs to be synchronised each time when adding a new transaction).
+- With few network participants transactions confirmation can take long, and if there are none they may not be confirmed at all.
+
 The existing shortcomings, as practice has shown, seriously undermine the advantages of blockchain technology when it comes to decentralization. For instance, in IOTA the Coordinator node is used to manage Tangle forks, and is essentially a validation server. 
+
 Are there ways to solve this problem and somehow elegantly remove the existing shortcomings and make a virtue of them?
+
 Analysis of existing approaches in implementing DLT and the DAG algorithm in particular suggests that there is such a solution. When studying for example IOTA network transaction graphs, it is easy to see that the graph's evolution time axis is directed from right to left. As it should be.  the graph is directed and acyclic, a new transaction is a content-oriented message and thus does not know its place within the network's topology and hope for the good will of the coordinator. If it does not work out (as often happens), the transaction may not be confirmed at all. 
+
 Our solution allows change the evolution time direction in DAG and get maximum decentralization, shifts the transaction from content-oriented to topological-oriented and uses ranking algorithm. At the same time all the model's advantages are fully present.
+
 What is the essence of modernization?
-	Just as in classical DAG, a new message that in much the same way is formed from a chain of connected transactions with links to hash headings of their transactions as a trunk fork, providing balance, and as brunch links from one of several transactions connected in the message which the node has obtained for validation in the private inbox of the distributed storage;
-	Using the ranking algorithm described below, the node forms a list of two versions of the transmission: in the first instance with the necessary binds to the trunk and brunch graph, and in the second it sends the MAM algorithm validated messages;
-	The node may be passive and not do anything, neither in validating and processing messages, but then this will affect its ranking, and in order to implement its own processing transactions it will have to pay a commission for the network to provide the necessary validation message packet.
+
+*1. Just as in classical DAG, a new message that in much the same way is formed from a chain of connected transactions with links to hash headings of their transactions as a trunk fork, providing balance, and as brunch links from one of several transactions connected in the message which the node has obtained for validation in the private inbox of the distributed storage;*
+
+*2. Using the ranking algorithm described below, the node forms a list of two versions of the transmission: in the first instance with the necessary binds to the trunk and brunch graph, and in the second it sends the MAM algorithm validated messages;*
+
+*3. The node may be passive and not do anything, neither in validating and processing messages, but then this will affect its ranking, and in order to implement its own processing transactions it will have to pay a commission for the network to provide the necessary validation message packet.*
+
 Here the question arises: how to create topologies in a crypto-protected decentralized network? How can content-oriented messages become the addressed parcel keeping confidentiality?
 This problem can be solved using the basic IPFS protocol. The term 'decentralisation' has acquired a new meaning with the advent of crypto-currencies and blockchain technology. There emerged many new projects that simply have no equivalents. The InterPlanetary File System (IPFS) is one illustrative example. What are the features of the new technology and what opportunities does it open up? 
 IPFS combines sharding and decentralised file storage. Yes, many companies are developing solutions for file storage, in particular through Sia and supported by Google Storj. However, IPFS works under a different principle, more precisely bringing about a symbiosis of these technologies.

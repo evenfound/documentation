@@ -14,7 +14,7 @@ One of the basic models successfully implemented in DLT projects (IOTA, Byteball
 
 In classical blockchain technology transactions are intially grouped into a block, after which in the course of time this block is added to a chain of other such blocks. In this system the capacity and transaction time are limited by the block's size and the time needed to generate a new block.
 
-![Screenshot](./img/1.png)
+![Screenshot](/img/1.png)
  
 In the DAG model (Directed Acyclic Graph) each transaction is immediately added to a graph compiled from many transactions recorded not consecutively, but simultaneously. Here there are no blocks, and therefore there are no problems with size.
 

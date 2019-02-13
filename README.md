@@ -1,6 +1,6 @@
-#EVEN network basic protocol
+# EVEN network basic protocol
 
-1.1. Technology choice
+## 1.1. Technology choice
 
 The basis for the stable functioning of a distributed network is a logically coherent protocol that enables three essential tasks to be solved: protection of confidentiality, distribution and storage of data. In historical terms, trust in products or services is earned in the course of their lifetime. Physical or electronic records accompany every object and confirm its origin, purpose, quantity and history. Creation, support and confirmation of all this information adds a significant 'trust tax', as expressed in the man hours expended by banks, accountants, lawyers, auditors and control services quality among others control services. At the same time, important information is frequently lost, becomes inaccessible or occasionally deliberately hidden.
 The fourth industrial revolution continues to blur the lines between the physical and digital worlds, and blockchain significantly alleviates the authenticity and value of data necessary to support objects and services along the whole cost chain. Furthermore, blockchain introduces a compatible transaction layer in which the parties being not acquainted with each other can exchange financial and physical values in real time. 

@@ -17,8 +17,11 @@ In classical blockchain technology transactions are intially grouped into a bloc
 ![Screenshot](1.png)
  
 In the DAG model (Directed Acyclic Graph) each transaction is immediately added to a graph compiled from many transactions recorded not consecutively, but simultaneously. Here there are no blocks, and therefore there are no problems with size.
- .
+
+![Screenshot](2.png)
+
 Within this structure users themselves support the network. Before sending a transaction no fewer than one and generally two preceding transactions need to be confirmed. That is exactly why there are no miners or masternodes here.
+
 The advantages of this solution:
 	transactions speed
 	no commission (or minute)

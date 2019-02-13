@@ -97,25 +97,26 @@ In each period of calculating the work of the network the node ranking value dep
 
 Here it is worth mentioning that most information exchange and data verification algorithms in a distributed network provide for an equal involvement of its active members in this process.   Thus the **_capacity_**  of a specific node, as a full participant, impacts the average time for processing information. Its relative value depends on the total computing capacity of the **_P_**  network, which can be represented as the sum of discrete values of the network node capacity:
 
-	`P = ∑_(i=0)^M Pi(T=〖tj)〗_ `                                                                            (1.1)
+	P = ∑_(i=0)^M Pi(T=〖tj)〗_                                                                             (1.1)
 
 Where **_M_**  is the number of nodes in the network, *Pi* the computing power of the *i* node at discrete moment *T* -  from the *j* event.
 
 At the same time the **_relative node capacity input_** into the total computing capacity of the network looks like this:
 
-	`P_o  =〖P_i (T=〖t_j)〗_ 〗_ /P   `                                                          (1.2)
+	P_o  =〖P_i (T=〖t_j)〗_ 〗_ /P                                                                         (1.2)
 
-Note: It is evident that an increase in the total capacity of the node network with its constant value at a specific node leads to the reduction of the value of its relative weight in the system, which must be factored in when considering the impact on the resulting indicator.
+**Note:** *It is evident that an increase in the total capacity of the node network with its constant value at a specific node leads to the reduction of the value of its relative weight in the system, which must be factored in when considering the impact on the resulting indicator.
 
-2.  Of the relative speed on the network's operation.
+*2.  Of the relative speed on the network's operation.
 
-The value V_N determined by the number of confirmed packets of data transfer over a unit of time in the network in which the node operates will obviously impact on its ranking. Bearing in mind that this method yields a relative value, it would be feasible to normalize this parameter V_o either towards the middle of its network value or to the maximum value. This choice can be made by experimental means, by calculating the level of indeterminacy of the value of the node ranking function.
+The value *V_N* determined by the number of confirmed packets of data transfer over a unit of time in the network in which the node operates will obviously impact on its ranking. Bearing in mind that this method yields a relative value, it would be feasible to normalize this parameter *V_o* either towards the middle of its network value or to the maximum value. This choice can be made by experimental means, by calculating the level of indeterminacy of the value of the node ranking function.
 
 
-3.  Of the relative input of the node into the information exchange — activity.
+*3.  Of the relative input of the node into the information exchange — activity.
 
-A relative share of the input of a specific node into information exchange  K_o characterizes its activity. It depends on the total value of the volume of information exchange — the number of units of information К, transferred in the distribution network over an interval of time by active network participants calculated statistically, and the volume of the input of the K_i  i node into this exchange.
-Here it should be noted that a substantial impact on this indicator is made by 1 and 2 above, which allows us to assume its integral nature. In other words, its value in a discrete period of time of a j event is the value of the figure's area limited by the function of the change in the total information exchange over a period of time Δt depending on the speed of the change of the i node input, which is determined by the derivative from the function of the change in relative values 1 and 2:
+A relative share of the input of a specific node into information exchange  *K_o* characterizes its activity. It depends on the total value of the volume of information exchange — the number of units of information К, transferred in the distribution network over an interval of time by active network participants calculated statistically, and the volume of the input of the *K_i  i* node into this exchange.
+
+Here it should be noted that a substantial impact on this indicator is made by *1* and *2* above, which allows us to assume its integral nature. In other words, its value in a discrete period of time of a *j* event is the value of the figure's area limited by the function of the change in the total information exchange over a period of time *Δt* depending on the speed of the change of the *i* node input, which is determined by the derivative from the function of the change in relative values *1* and *2*:
 
 
                                   (1.3)

@@ -18,7 +18,7 @@ In classical blockchain technology transactions are intially grouped into a bloc
  
 In the DAG model (Directed Acyclic Graph) each transaction is immediately added to a graph compiled from many transactions recorded not consecutively, but simultaneously. Here there are no blocks, and therefore there are no problems with size.
 
-![Screenshot](2.png)
+![Screenshot](/img/2.png)
 
 Within this structure users themselves support the network. Before sending a transaction no fewer than one and generally two preceding transactions need to be confirmed. That is exactly why there are no miners or masternodes here.
 
@@ -67,7 +67,7 @@ A local file may be added to IPFS file system, which makes it accessible to the 
 
 From the technology definition, especially with reference to forming DAG graphs, and it really does use the DAG algorithm, we can easily understand the proximity of the technologies and and opportunity for their blending when implementing the properties needed for the basic protocol.
 
-## 1.2 Possibility levels of client applications and the subnet.
+## 1.2 Possibility levels of client applications and the subnet
 
 Let us first of all add some details on how EVEN network basic protocol works using IPFS and how virtual voting occurs.
 
@@ -85,7 +85,7 @@ Bearing in mind the main advantage of DLT — the speed of carrying out transact
 
 The node service that performs the network's needs as effectively as it can, and which thus supports its stability and productivity, factoring in its steadily rising ranking (see above) is ranked in the first lines in the mailing list. Correspondingly, using the same algorithm, this service forms its own mailing list, the top of which includes services that are equally effective. Thus, since the ranking is changeable, the network dynamically forms a virtual subnetwork of effective services, on the basis of whose votes quicker virtual voting can be constructed. The key word here is **_dynamic_**. The network for preventing the monopolisation of consensus should automatically control the balance of the participants of leader subnetworks.
 
-## 1.3 The algorithm for the ranking calculation and a few simple formulae.
+## 1.3 The algorithm for the ranking calculation and a few simple formulae
 
 The algorithm for the ranking calculation has a synthetic character and its main purpose is the dynamic ranking calculation of the node service with a simultaneous compensating this calculation under technical and information indicators.
 
@@ -118,63 +118,75 @@ A relative share of the input of a specific node into information exchange  *K_o
 
 Here it should be noted that a substantial impact on this indicator is made by *1* and *2* above, which allows us to assume its integral nature. In other words, its value in a discrete period of time of a *j* event is the value of the figure's area limited by the function of the change in the total information exchange over a period of time *Δt* depending on the speed of the change of the *i* node input, which is determined by the derivative from the function of the change in relative values *1* and *2*:
 
+![Screenshot](/img/1.png)
 
                                   (1.3)
 
-K_o=K_i/K ∫_(t_(j-1))^(t_j)  ((V_o (t)+P_o (t))dt)/2                                                 (1.4)
-On examining the dependency schedule it can be assumed that the endless increase in node capacity does not entail an endless increase in the relative input share and the principle of its distribution, for instance, on a polynomial prognosis, will be of an exponential character, which can be used to offset its impact on distribution, factoring in the weight of the following indicators.
-4.  Setting totals.
+	K_o=K_i/K ∫_(t_(j-1))^(t_j)  ((V_o (t)+P_o (t))dt)/2                                                 (1.4)
 
-Considering one of the basic requirements of a peer-to-peer network which excludes an increasing domination of its separate members in the operational information exchange, with the aim of preventing its centralization of data this indicator can be used as an offsetting influence of technical indicators 1, 2 and 3. Prefacing the description, the approach resides essentially in the fact that the calculation of the node ranking at the moment of time t is made by calculating the average value of the natural logarithm from the relative amount of settings and the logarithmically reverse function from the value of the relative input of the node into the information exchange. In other words, the number of S settings over the j period of events is lograrithmically inverse to the relative input into the information exchange.
-Picture here, I'll do it tomorrow.
+On examining the dependency schedule it can be assumed that the endless increase in node capacity does not entail an endless increase in the *relative input share* and the principle of its distribution, for instance, on a polynomial prognosis, will be of an exponential character, which can be used to offset its impact on distribution, factoring in the weight of the following indicators.
+
+*4.  Setting totals.
+
+Considering one of the basic requirements of a peer-to-peer network which excludes an increasing domination of its separate members in the operational information exchange, with the aim of preventing its centralization of data this indicator can be used as an **offsetting** influence of technical indicators 1, 2 and 3. Prefacing the description, the approach resides essentially in the fact that the calculation of the node ranking at the moment of time t is made by calculating the average value of the natural logarithm from the relative amount of settings and the logarithmically reverse function from the value of the relative input of the node into the information exchange. In other words, the number of **S** settings over the j period of events is lograrithmically inverse to the relative input into the information exchange.
 
 This dependency demonstrates the offsetting deliberateness of calculating the node ranking from absolutely different weight categories. In other words, with the maximum possible increase in computing resources, network quality and activity and with the same maximum setting totals, the node ranking will remain no greater than at the average level. With other defined values, higher or lower rankings that do not contradict logic are possible. 
 Thus 
 
-S_o=1/(∑_(i=0)^N S_i ) S_i (T=t_j)                                        1.5
+	S_o=1/(∑_(i=0)^N S_i ) S_i (T=t_j)                                        (1.5)
+
 Where the settings total of the i node over the period of the j event is the value of the settings total of the i node over the time of the j event.
-Note: It will be appropriate to explain that the time of event j is the time interval from the last event in the network in which the latest values required in this method of indicators were obtained.
 
-5. Accuracy of historical information, that is, of 'rumors'
+**Note:** *It will be appropriate to explain that the time of event j is the time interval from the last event in the network in which the latest values required in this method of indicators were obtained.
 
+*5. Accuracy of historical information, that is, of 'rumors'
 
 In systems with a distributed confirmation of transactions, in order to implement most consensus algorithms information on past events in the network is used.
+
 But factoring in the fact that by no means all modes can physically be situated in the network, their blockchains form blank spots whereby the other nodes when there is a request to restore missing data on calculating the consensus algorithm are forced to lose the computing resource for the request for non-existent data.
-In order to reduce the likelihood of such an outcome and thereby maintain the exchange speed indicators in the network at the required level, it is essential to include in the ranking calculation the accuracy of information I_o as a ratio of the number of blank spots in the blockchain to the total amount of information units in it. As opposed to parameter 3, this parameter is formed not in relation to the whole network but on the node's own resources.
+
+In order to reduce the likelihood of such an outcome and thereby maintain the exchange speed indicators in the network at the required level, it is essential to include in the ranking calculation the accuracy of information *I_o* as a ratio of the number of blank spots in the blockchain to the total amount of information units in it. **As opposed to parameter 3**, this parameter is formed not in relation to the whole network but on the node's own resources.
+
 Formally, it can be considered as a weight multiplicative coefficient with a calculation of the final node ranking.
 
-Description of the method
+**Description of the method**
 
 Factoring in these indicators and based on a hypothesis, the first stage of the ranking calculation at the moment of time t over the time of the event j looks as follows:
 
-R_j=I_0   (lnS_o+(ln K_0)/(K_0-1))/2                                                1.6
+	R_j=I_0   (lnS_o+(ln K_0)/(K_0-1))/2                                                (1.6)
 
 At this stage, as already stated, we obtain the discrete value ranking over the time of the event j.
-A more refined task of the modality is in having with high probability an accurate ranking value in this uninterrupted period Δt  from the moment event j. ends.
+A more refined task of the modality is in having with high probability an accurate ranking value in this uninterrupted period *Δt*  from the moment event *j* ends.
+
 For illustration purposes let us construct a graph of relative dependencies outlined above.
+
+![Screenshot](/img/4.jpg)
  
 The diagram shows the dependency of a relative value of a node ranking with regard to others in the network which is measured along the vertical axis from the point where the schedules of the two functions intersect: K, which characterises the relative technical provision of the service and its network parameters, is the hash rate and ping time, and S is the relative balance. The ranking value is at its maximum at the point of intersection, in other words when achieving a balance of two indicators, that is, their mutual offsetting. To put it another way, to raise one's ranking having bought up all tokens or created a super powerful pool of computing capabilities is impossible, the ranking will be offset. In theory this is possible, but this is when there is one node service in the network.
+
 If we depict the graph another way:
+
+![Screenshot](/img/5.jpg)
  
 you can see the average calculation of the ranking value as an average value of indicators K and S on the synthetic curve of the values.
-(The original application for demonstrating how the algorithm works can be downloaded from GitHub repository link — https://github.com/evenfound/even-network/tree/master/r-score-demo).
+(The original application for demonstrating how the algorithm works can be downloaded from GitHub repository https://github.com/evenfound/even-network/tree/master/r-score-demo).
 
-1.4. Structure of transactions and messages
+## 1.4. Structure of transactions and messages
 
 Let us turn to classic examples for understanding the information assets transmitting process in a basic protocol. Alice has the initial number A_SECRET_SEED, which contains 100 units in 4 different addresses, and the total balances provide this value:
 
-seed : A_SECRET_SEED 
-address[0] : QGHFGFQSGQFS …… AAA, balance : 10 
-address[1] : QGHFGFQSGQFS …… BBB, balance : 5 
-address[2] : QGHFGFQSGQFS …… CCC, balance : 25 
-address[3] : QGHFGFQSGQFS …… DDD, balance : 60 
-address[4] : QGHFGFQSGQFS …… EEE, balance : 0
+	seed : A_SECRET_SEED 
+	address[0] : QGHFGFQSGQFS …… AAA, balance : 10 
+	address[1] : QGHFGFQSGQFS …… BBB, balance : 5 
+	address[2] : QGHFGFQSGQFS …… CCC, balance : 25 
+	address[3] : QGHFGFQSGQFS …… DDD, balance : 60 
+	address[4] : QGHFGFQSGQFS …… EEE, balance : 0
 
 Bob doesn't have anything in his wallets:
 
-seed : B_SECRET_SEED 
-address[0] : AHGSHFSJHFSJ…… QQQ, balance : 0 
-address[1] : AHGSHFSJHFSJ…… VVV, balance : 0
+	seed : B_SECRET_SEED 
+	address[0] : AHGSHFSJHFSJ…… QQQ, balance : 0 
+	address[1] : AHGSHFSJHFSJ…… VVV, balance : 0
 
 Alice decides to send Bob 80 information units at the address AHGSHFSJHFSJ…… QQQ .. A message in the EVEN basic protocol is a connected hash with an index of three types of transaction: input, output and meta-transactions. For our scenario it is initially essential to prepare an output transaction, which means that we want to send to Bob's address 80 information units:
 

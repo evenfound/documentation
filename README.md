@@ -118,7 +118,7 @@ A relative share of the input of a specific node into information exchange  *K_o
 
 Here it should be noted that a substantial impact on this indicator is made by *1* and *2* above, which allows us to assume its integral nature. In other words, its value in a discrete period of time of a *j* event is the value of the figure's area limited by the function of the change in the total information exchange over a period of time *Δt* depending on the speed of the change of the *i* node input, which is determined by the derivative from the function of the change in relative values *1* and *2*:
 
-![Screenshot](/img/3.png)
+![Screenshot](/img/3n.png)
 (1.3)
 
 	K_o=K_i/K ∫_(t_(j-1))^(t_j)  ((V_o (t)+P_o (t))dt)/2                                                 (1.4)

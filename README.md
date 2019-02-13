@@ -7,9 +7,14 @@ The basis for the stable functioning of a distributed network is a logically coh
 The fourth industrial revolution continues to blur the lines between the physical and digital worlds, and blockchain significantly alleviates the authenticity and value of data necessary to support objects and services along the whole cost chain. Furthermore, blockchain introduces a compatible transaction layer in which the parties being not acquainted with each other can exchange financial and physical values in real time. 
 
 Blockchain builds a wallet into machines, which allows to balance profits and losses and conduct transactions with other machines automatically. New business models geared towards interaction between machines and forms of exchanging assets between them are emerging almost on a daily basis. However, as for scaling computing resource requirements and the cost of transactions, modern blockchain technologies have serious limitations.
+
 In this respect a new and viable means of solving familiar problems will be distribution ledger technology (DLT), which is getting stronger in the real sector of the economy. What is more, this technology can also be applied in such traditionally conservative businesses as oil and gas extraction. Practice shows that DLT can be successfully implemented wherever large volume of information databases are available and immutable.
+
 One of the basic models successfully implemented in DLT projects (IOTA, Byteball) today is DAG; this is the technology of distributed ledgers that differ from Blockchains in the structure of their records and asynchrony. 
+
 In classical blockchain technology transactions are intially grouped into a block, after which in the course of time this block is added to a chain of other such blocks. In this system the capacity and transaction time are limited by the block's size and the time needed to generate a new block.
+
+[![Screenshot](screenshot.png)]
  
 In the DAG model (Directed Acyclic Graph) each transaction is immediately added to a graph compiled from many transactions recorded not consecutively, but simultaneously. Here there are no blocks, and therefore there are no problems with size.
  .

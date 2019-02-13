@@ -191,16 +191,19 @@ Bob doesn't have anything in his wallets:
 Alice decides to send Bob 80 information units at the address AHGSHFSJHFSJ…… QQQ .. A message in the EVEN basic protocol is a connected hash with an index of three types of transaction: input, output and meta-transactions. For our scenario it is initially essential to prepare an output transaction, which means that we want to send to Bob's address 80 information units:
 
 ![Screenshot](/img/6.jpg)
+
 *Draw up a transaction to Bob's address of 80 information units*
 
 Next we will need to draw up an input transaction. In this scenario all four addresses will have to be used which contain ( 10 + 5 + 25 + 60 > 80) information units to perform the output value to the sum of 80.
 
 ![Screenshot](/img/7.png)
+
 *Four output transactions which send units to Bob's address*
 
 Next we will need to draw up an input transaction. In this scenario all four addresses will have to be used which contain (10 + 5 + 25 + 60 > 80) information units to perform the output value to the sum of 80. An input transaction should contain the transaction signature, which means that it is essential to add an additional meta-transaction to transfer the signature, it must be added:
 
 ![Screenshot](/img/8.png)
+
 *Adding to the meta-transaction message to transfer the signature*
 
 Drawing up the message has not been completed: the packet is unbalanced. Thus four transactions have been formed for 100 information units: 10 + 5 + 25 + 60 = 100 inputs and 80 outputs, with 20 information units remaining that should be returned to the sender's wallet. For this an additional transaction needs to be created. The wallet creates a new address to receive an output transaction for the remainder marked 'unspend':
@@ -210,6 +213,7 @@ Drawing up the message has not been completed: the packet is unbalanced. Thus fo
 After this the balanced packet is received and the conclusion of the message can be begun. For this it is essential to fill out consecutively the transaction indexes, the last index and generate the packet's **hash function** with the help of the **hash function SHA-3**. 
 
 ![Screenshot](/img/10.png)
+
 *Filling out the indexes*
 
 After this the balanced packet is received and the conclusion of the message can be started. For this it is essential to fill out consecutively the transaction indexes, the last index and generate the packet's **hash function** with the help of the **hash function SHA-3**.
@@ -217,21 +221,28 @@ After this the balanced packet is received and the conclusion of the message can
 The hash function uses a sponge algorithm that will consecutively absorb the transactions, checking each element one by one (the order is important) and then will generate the result. In addition, at the stage of receiving the hash the function will check whether the packet hash is safe or not. If it is not, it will change the obsolete tag of the u-head transaction (a transaction with the index 0) and again generate a hash. After the message hash has been received, it is essential to continue filling out the transactions and receive the following set:
 
 ![Screenshot](/img/11.png)
+
 *Filling out the message hashes*
 
 Next it is essential to sign the input transactions with the private key of the corresponding address. For this you can receive the address private key from the key generator with the help of A_SECRET_SEED of the wallet. Using the address secret key, it becomes possible to use the signature fragment generator with the private key and the packet hash in order to receive the transaction signature.
 
-![Screenshot](/img/12.jpg) 
+![Screenshot](/img/12.png) 
+
 *Using the key generator to receive the signature fragment generator.*
   
- 
+![Screenshot](/img/13.png) 
 
-Filling in the signature with the appropriate signature fragment generator for each input transaction.
+![Screenshot](/img/14.png) 
+
+*Filling in the signature with the appropriate signature fragment generator for each input transaction.*
+
 After this all parts of the message are ready.
+
 Next the chain of its own transactions is connected, through an indication in the trunk field of the hash value of the last input transaction, and the chain of transactions received in the inbox of unconfirmed transactions is connected, through an indication of the hashes of the head transaction messages. Below is the connection scheme draft.
  
+![Screenshot](/img/15.jpg) 
+*Scheme of DAG branches connection.*
 
-Scheme of DAG branches connection..
-  .
+![Screenshot](/img/16.png) 
+
 After this the message is ready to be sent.
-

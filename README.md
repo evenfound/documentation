@@ -23,9 +23,11 @@ In the DAG model (Directed Acyclic Graph) each transaction is immediately added 
 Within this structure users themselves support the network. Before sending a transaction no fewer than one and generally two preceding transactions need to be confirmed. That is exactly why there are no miners or masternodes here.
 
 The advantages of this solution:
+
 	- transactions speed
 	- no commission (or minute)
 	- more scalable compared to blockchain.
+
 However, the obvious advantages of this model are per se offset by the following shortcomings:
 DAG shortcomings:
 	Scalability issues (blockchain needs to be synchronised each time when adding a new transaction).

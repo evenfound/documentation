@@ -24,9 +24,9 @@ Within this structure users themselves support the network. Before sending a tra
 
 The advantages of this solution:
 
-	- transactions speed
-	- no commission (or minute)
-	- more scalable compared to blockchain.
+- transactions speed
+- no commission (or minute)
+- more scalable compared to blockchain.
 
 However, the obvious advantages of this model are per se offset by the following shortcomings:
 DAG shortcomings:
